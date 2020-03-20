@@ -1,0 +1,6 @@
+A Customer Feedback dataset dataset is explored using T-SQL. The dataset contains the following variables: Category, Request ID, Created Time, Request Status, Completed Time, Sub Category, Elapsed Time, and BUEntity.
+
+The dataset is loaded in to MS SQL server, and the following questions are answered:
+-	What is the most popular Sub Category the inbox receives in a given week?
+-	On average, how long does it take for each email to be addressed – that is, how long does it take for an action to be taken, and what can be inferred by this? 
+-	What types of relationships exist in the data? For example, is there a relationship between BUEntity and Sub Category? What about SubCategory and Elapsed Time?
