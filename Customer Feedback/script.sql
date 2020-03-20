@@ -48,7 +48,7 @@ SELECT * FROM [SubCategorybyWeek];
 -- Product Questions is most popular, aside from Not Assigned
 
 
--- 2. On average, how long does it take for each email to be addressed – that is, how long does it take for an action to be taken, and what can be inferred by this?
+-- 2. On average, how long does it take for each email to be addressed â€“ that is, how long does it take for an action to be taken, and what can be inferred by this?
 SELECT cast(avg(cast([ElapsedTime] as float))as datetime) AvgTime
 FROM [Project].[dbo].[Feedback]
 -- this is what the average of the cast looks like, but I can't interpret it without converting back to datetime:
@@ -83,22 +83,3 @@ ORDER BY
 SELECT COUNT([ElapsedTime])
 FROM [Project].[dbo].[Feedback]
 -- 1090 tickets were completed
-
-
-
-
-
-
-
-
--- Crap code
-CREATE PROCEDURE dbo.YearTimeConvert(@variable datetime) AS
-BEGIN
-DECLARE
-	@newtime TIME
-SELECT @newtime = CAST(@variable as TIME) FROM [Project].[dbo].[Feedback] WHERE @variable = [Project].[dbo].[Feedback].[ElapsedTime]
-END
-BEGIN
-
-EXEC YearTimeConvert [ElapsedTime]
---DROP FUNCTION  dbo.YearTimeConvert
