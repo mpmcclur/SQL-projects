@@ -1,3 +1,6 @@
+--Below are scripts in T-SQL demonstrating elementary use of clauses, procedures, etc.
+
+
 CREATE TABLE Bookshelf (
 	BookshelfID int primary key,
 	Bookshelf int,
