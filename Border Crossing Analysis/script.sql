@@ -37,8 +37,3 @@ select Border,Date,Measure,sum(Value) as Sum , Avg(Sum(Value)) over
 (partition by Measure order by Date rows between 1 preceding and current row) as Average from BorderData.dbo.DataCopy
 group by Date, Border, Measure
 order by Date desc;
-
--- Output the select statement above to a CSV file using the "sqlcmd" utility
-sqlcmd -S . -d BorderData.dbo.DataCopy -E -s',' -W -Q "select Border,Date,Measure,sum(Value) as Sum , Avg(Sum(Value)) over (Partition by Measure order by Date rows between 1 preceding and current row) as Average from BorderData.dbo.DataCopy
-group by Date, Border, Measure order by Date desc;" > C:\Users\Matt\Desktop\output.csv
-
